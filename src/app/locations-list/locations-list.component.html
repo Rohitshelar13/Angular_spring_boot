@@ -1,0 +1,49 @@
+<h3 class="text-center">Welcome to the Employee Travel Desk</h3>
+<div class="px-4 py-5 my-5 text-center">
+    <img class="d-block mx-auto mb-4" src="assets/img/CTSH-82a8444b.png" alt="" width="72" height="57">
+    <h1 class="display-5 fw-bold text-body-emphasis">Travel Your Plan Today!!</h1>
+    <div class="col-lg-6 mx-auto">
+      <p class="lead mb-4">At the Employee Travel Desk, we strive to provide a seamless travel experience for our employees. Whether you're planning a business trip or embarking on a personal journey, we've got you covered.</p>
+      <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+        <button type="button" class="btn btn-primary btn-lg px-4 gap-3" (click)="goToTravelRequest()">Raise Travel Request</button>
+        <button type="button" class="btn btn-outline-secondary btn-lg px-4" onclick="scrollToLocationContainer()">Locations </button>
+      </div>
+    </div>
+  </div>
+  <div class="b-example-divider"></div>
+  <div class="px-4 py-5 my-5 text-center">
+    <!-- <img class="d-block mx-auto mb-4" src="assets/img/CTSH-82a8444b.png" alt="" width="72" height="57"> -->
+    <h1 class="display-5 fw-bold text-body-emphasis">Our Services</h1>
+    <div class="col-lg-6 mx-auto">
+      <p class="lead mb-4">Our travel planner module offers a range of functionalities to make your travel arrangements smooth and hassle-free. You can raise new travel requests, track the status of your requests, and even approve or reject travel requests if you have the necessary permissions.</p>
+      <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+        <button type="button" class="btn btn-outline-secondary btn-lg px-4" (click)="goToTravelRequest()">Raise Travel Request</button>
+        <button type="button" class="btn btn-outline-secondary btn-lg px-4" (click)="goToRequestStatus()">Check Status </button>
+        <button type="button" class="btn btn-outline-secondary btn-lg px-4" (click)="goToRequestList()">Take Action </button>
+      </div>
+    </div>
+  </div>
+  <!-- src\assets\img\CTSH-82a8444b.png -->
+<div class="container" id="loc">
+<h2>Location List</h2>
+<table class="table table-striped table-bordered table-hover">
+<thead>
+    <tr>
+        <th>Id</th>
+        <th>Location name</th>
+    </tr>
+</thead>
+<tbody>
+    <tr *ngFor = "let location of locations">
+        <td >{{location.id}}</td>
+        <td>{{location.name}}</td>
+    </tr>
+</tbody>
+</table>
+</div>
+<script>
+    function scrollToLocationContainer() {
+  const locationContainer = document.getElementById('loc');
+  locationContainer.scrollIntoView({ behavior: 'smooth' });
+}
+</script>

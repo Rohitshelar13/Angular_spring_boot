@@ -1,0 +1,16 @@
+<div class="container">
+<h2>Login</h2>
+<form (ngSubmit)="login()" [formGroup]="loginForm">
+  <div class="form-group">
+    <label for="employeeId">Employee ID:</label>
+    <input type="text" id="employeeId" formControlName="employeeId" class="form-control">
+  </div>
+  <div class="form-group">
+    <label for="password">Password:</label>
+    <input type="password" id="password" formControlName="password" class="form-control">
+  </div>
+  <br>
+  <button type="submit" class="btn btn-success" [disabled]="loginForm.invalid">Login</button>
+</form>
+</div>
+

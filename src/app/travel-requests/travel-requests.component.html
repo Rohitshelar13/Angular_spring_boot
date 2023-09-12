@@ -1,0 +1,51 @@
+<h2>New Travel Request</h2>
+<div class="container">
+<form (ngSubmit)="submitTravelRequest()" [formGroup]="travelRequestForm">
+  <div class="form-group">
+    <label for="employeeId">Employee ID:</label>
+    <input type="text" id="employeeId" formControlName="employeeId" class="form-control" [value]="user.employeeId" readonly>
+  </div>
+  <div class="form-group">
+    <label for="hrId">HR ID:</label>
+    <input type="text" id="hrId" formControlName="hrId" class="form-control" [value]="user.hrId" readonly>
+  </div>
+  <div class="form-group">
+    <label for="fromDate">From Date:</label>
+    <input type="date" id="fromDate" formControlName="fromDate" class="form-control" required>
+  </div>
+  <div class="form-group">
+    <label for="toDate">To Date:</label>
+    <input type="date" id="toDate" formControlName="toDate" class="form-control" required>
+  </div>
+  <div class="form-group">
+  <label for="location">Location</label>
+  <select id="location" formControlName="location" class="form-control">
+    <option value="">Select Location</option>
+    <option *ngFor="let location of locations" [value]="location.id">{{ location.name }}</option>
+  </select>
+</div>
+<div class="form-group">
+<label for="priority">Priority</label>
+  <div>
+    <label class="radio-label">
+      <input type="radio" id="priority-high" formControlName="priority" value="High">
+      High
+    </label>
+    <label class="radio-label">
+      <input type="radio" id="priority-medium" formControlName="priority" value="Medium">
+      Medium
+    </label>
+    <label class="radio-label">
+      <input type="radio" id="priority-low" formControlName="priority" value="Low">
+      Low
+    </label>
+  </div>
+</div>
+  <div class="form-group">
+    <label for="purposeOfTravel">Purpose of Travel:</label>
+    <textarea id="purposeOfTravel" formControlName="purposeOfTravel" class="form-control" rows="4" required></textarea>
+  </div>
+  <br>
+  <button type="submit" class="btn btn-success" [disabled]="travelRequestForm.invalid">Submit</button>
+</form>
+</div>

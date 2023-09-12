@@ -1,0 +1,17 @@
+<h2>Check Request Status</h2>
+
+<div class="container">
+  <label for="travelRequestId">Travel Request ID:</label>
+  <input type="text" class="form-control" id="travelRequestId" [(ngModel)]="travelRequestId" placeholder="Enter your Travel Request Id">
+  <button class="btn btn-success mx-2 my-2" (click)="getRequestStatus()">Get Status</button>
+</div>
+<div class="container" *ngIf="travelRequest">
+  <h3>Travel Request Details:</h3>
+  <p><strong>Request ID:</strong> {{ travelRequest.requestId }}</p>
+  <p><strong>Employee ID:</strong> {{ travelRequest.raisedByEmployeeId }}</p>
+  <p><strong>From Date:</strong> {{ travelRequest.fromDate | date }}</p>
+  <p><strong>To Date:</strong> {{ travelRequest.toDate | date }}</p>
+  <p><strong>Purpose of Travel:</strong> {{ travelRequest.purposeOfTravel }}</p>
+  <p><strong>Request Status:</strong> {{ travelRequest.requestStatus }}</p>
+  <p><strong>Request approved on:</strong> {{ travelRequest.requestApprovedOn }}</p>
+</div>
